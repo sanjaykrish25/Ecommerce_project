@@ -1,0 +1,92 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "categoryId":1,
+      "name": "polo T-shirts",
+      "body": "some comment"
+    },
+    {
+      "id": 2,
+      "categoryId":2,
+      "name": "sports T-shirts",
+      "description": "some comment"
+    },
+    {
+      "id": 3,
+      "categoryId":3,
+      "name": "puma T-shirts",
+      "description": "some comment"
+    },
+    {
+      "id": 4,
+      "categoryId":4,
+      "name": "causal T-shirt",
+      "description": "some comment"
+    },
+    {
+      "id": 5,
+      "categoryId":4,
+      "name": "partyWear T-shirt",
+      "description": "some comment"
+    },
+    {
+      "id": 6,
+      "categoryId":5,
+      "name": "Wear T-shirt",
+      "description": "some comment"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "categoryId":1,
+      "image":"../../../assets/soccer-jersey-template-sport-t-shirt-design_29096-1244.avif",
+      "name": "polo T-shirts"
+    },
+    {
+      "id": 2,
+      "categoryId":2,
+      "image":"../../../assets/images.jpg",
+      "name": "sports T-shirts"
+    },
+    {
+      "id": 3,
+      "categoryId":3,
+      "image":"../../../assets/soccer-jersey-template-sport-t-shirt-design_29096-1244.avif",
+      "name": "puma T-shirts"
+    },
+    {
+      "id": 4,
+      "categoryId":4,
+      "image":"../../../assets/images.jpg",
+      "name": "causal T-shirt"
+    },
+    {
+      "id": 5,
+      "categoryId":5,
+      "image":"../../../assets/images.jpg",
+      "name": "partyWear T-shirt"
+    },
+    {
+      "id": 6,
+      "categoryId":6,
+      "image":"../../../assets/images.jpg",
+      "name": "party T-shirt"
+    },
+    {
+      "id": 7,
+      "categoryId":7,
+      "image":"../../../assets/images.jpg",
+      "name": "Wear T-shirt"
+    }, {
+      "id": 3,
+      "categoryId":3,
+      "image":"../../../assets/soccer-jersey-template-sport-t-shirt-design_29096-1244.avif",
+      "name": "puma T-shirts"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

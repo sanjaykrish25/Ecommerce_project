@@ -1,0 +1,29 @@
+.navbar-expand-lg {
+
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+.fw-bolder{
+    position: relative;
+    margin-left: 20%;
+
+}
+.Col{
+  font-size: 30px;
+  
+ 
+}

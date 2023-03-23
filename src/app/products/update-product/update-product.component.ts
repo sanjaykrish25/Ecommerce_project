@@ -1,0 +1,15 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-update-product',
+  templateUrl: './update-product.component.html',
+  styleUrls: ['./update-product.component.scss']
+})
+export class UpdateProductComponent {
+  @Input() getData:any;
+
+
+
+
+
+}
