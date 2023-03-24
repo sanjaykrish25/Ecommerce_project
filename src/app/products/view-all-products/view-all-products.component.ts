@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CartService } from 'src/app/framework/cart.service';
 import { Category } from 'src/app/framework/category';
 import { Products } from '../products';
 import { ServiceService } from '../service.service';
@@ -15,7 +14,7 @@ export class ViewAllProductsComponent implements OnInit {
   addCart: Category| any;
   addcarts:Products|any
 
-  constructor(private service:ServiceService, private route:Router, private activateRoute:ActivatedRoute, private cartService:CartService){}
+  constructor(private service:ServiceService, private route:Router, private activateRoute:ActivatedRoute){}
   searchkey:string='';
 
   ngOnInit(){

@@ -1,11 +1,30 @@
 
 <nav class="navbar navbar-dark bg-primary mt-2">
   <!-- Navbar content -->
-  <button (click)="logIn()" *ngIf="!isLogged()">Login</button>
-  <button (click)="logOut()" *ngIf="isLogged()">logOut</button>
- 
+  <div class="">
+
+    <div>
+      <button (click)="logIn()" *ngIf="!isLogged()">Login</button>
+    </div>
+    <button  class='Profile'(click)="getProfilePicture()">Getprofile</button>
+    <ng-container *ngIf="Getprofile">
+
+      <img [src]="profilePicture" class="rounded-circle img-fluid" width="3%">
   
+    </ng-container>
+  
+
+  <div class="LogOut">
+    <button (click)="logOut()" *ngIf="isLogged()">signout</button>
+  </div>
+  
+
+  <!-- <div *ngIf="profilePicture"> -->
+    
+  <!-- </div> -->
+  </div>
 </nav>
+
 
 
 

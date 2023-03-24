@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MsalService } from '@azure/msal-angular';
+import { CartService } from '../cart.service';
 import { ServiceService } from '../products/service.service';
 
 @Component({
@@ -11,10 +13,13 @@ import { ServiceService } from '../products/service.service';
 })
 export class LoginComponent {
   
-constructor(private msalservice:MsalService, private router:Router, private service:ServiceService, private http:HttpClient ){
+constructor(private msalservice:MsalService, private router:Router, private service:ServiceService, private http:HttpClient,  private _profileService: CartService,
+  private domSanitizer: DomSanitizer ){
   localStorage.clear
 }
 Response:string|any;
+profilePicture:string|any 
+Getprofile:boolean=true     
  
   ngOnInit(){
 
@@ -43,9 +48,9 @@ Response:string|any;
   }
 
   logIn(){
-    if(this.msalservice.loginRedirect() !=null){
+    if(this.msalservice.loginRedirect()){
 
-      this.router.navigate(['mainpage'])
+      // this.router.navigate(['mainpage'])
 
     }
     // {
@@ -58,6 +63,7 @@ Response:string|any;
    
 
     }
+    
 
   
     logOut(){
@@ -65,13 +71,32 @@ Response:string|any;
     }
     
       
-     callProfile(){
-      this.http.get('https://graph.microsoft.com/v1.0/me').subscribe( res =>{
-        this.Response = JSON.stringify(res)
-      })
-     }
+    //  callProfile(){
+    //   this.http.get('https://graph.microsoft.com/v1.0/me').subscribe( res =>{
+    //     this.Response = JSON.stringify(res)
+    //   })
+    //  }
       
-    }
+    public getProfilePicture() {
+      this.Getprofile=!this.Getprofile
+
+     this.http.get("https://graph.microsoft.com/v1.0/me/photo/$value", { responseType: 'blob' }).subscribe(resp => {
+      
+    var UrlCreator = window.URL || window.webkitURL
+      
+    this.profilePicture = this.domSanitizer.bypassSecurityTrustResourceUrl(UrlCreator.createObjectURL(resp));
+        
+      }) }
+
     
+
+
+  
+}
+
+
+    
+
+
 
 

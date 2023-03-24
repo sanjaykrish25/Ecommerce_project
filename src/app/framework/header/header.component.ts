@@ -12,7 +12,6 @@ import { ServiceService } from 'src/app/products/service.service';
 })
 export class HeaderComponent implements OnInit,AfterViewInit{
   constructor( private router:Router, private service:ServiceService, private http:HttpClient , private graphService : GraphService, private msalService:MsalService){}
-  Response:string|any;
   photo:any;
   public searchTerm:string='';
 
@@ -24,7 +23,7 @@ export class HeaderComponent implements OnInit,AfterViewInit{
   }
   ngOnInit(){
   
-      this.graphService.getUserPhoto().subscribe(photo => this.photo = photo);
+   
   
     
   }
@@ -46,14 +45,17 @@ export class HeaderComponent implements OnInit,AfterViewInit{
 
   }
 
-  callProfile(){
-    this.http.get('https://graph.microsoft.com/v1.0/me').subscribe( res =>{
-      this.Response = JSON.stringify(res)
-    })
-   }
-
+ 
 
 }
+// debugger
+// const response = await fetch('https://graph.microsoft.com/v1.0/me/photo/$value', {
+//   headers: { Authorization: 'Bearer eyjo...' },
+// });
+// debugger
+// const pictureBlob = await response.blob();
+// console.log( pictureBlob );
+
 
 
   

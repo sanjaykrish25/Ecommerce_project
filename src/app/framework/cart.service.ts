@@ -1,50 +1,32 @@
-import { ReturnStatement } from '@angular/compiler';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+  HttpResponse,
+} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class CartService {
-  public cartItemList: any=[]
-  public  productCartList = new BehaviorSubject<any>([])
+@Injectable()
+export class ProfileService implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  getProducts(){
-    return this.productCartList.asObservable();
-
-  }
-
-  setProduct(product : any){
-    this.cartItemList.push(...product);
-    this.productCartList.next(product);
+  ngOnInit() {
 
   }
 
-  addToCart(product:any){
-    this.cartItemList.push(product)
-    this.productCartList.next(this.cartItemList)
-    this.getTotalPrice()
-    console.log(this.cartItemList)
-  }
-  getTotalPrice(){
-    let grandTotal = 0;
-    this.cartItemList.map((a:any)=>{
-      grandTotal+=a.total;
-    })
-  }
-
-  removCartItem(product:any){
-    this.cartItemList.map((a:any, index:any)=>{
-      if(product.id===a.id){
-        this.cartItemList.splice(index,1)
-      }
-    })
-
-  }
-  removeAllCart(){
-    this.cartItemList=[]
-    this.productCartList.next(this.cartItemList)
+  getImage(imageUrl: string): Observable<Blob> {
+    return this.http
+      .get(imageUrl, {
+        responseType: 'blob',
+        headers: new HttpHeaders({ 'Content-Type': 'image/jpeg' }),
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
   }
 }

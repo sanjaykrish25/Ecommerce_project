@@ -18,7 +18,7 @@ export class MsalGuard implements CanActivate {
       }
       
       
-      this.router.navigate(['mainpage'])
+      // this.router.navigate(['mainpage'])
        
       return false
   }
