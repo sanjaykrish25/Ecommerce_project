@@ -1,0 +1,20 @@
+<p>update-product works!</p>
+
+<table>
+    <tr>
+        <th>address</th>
+        <th>city</th>
+        <th>state</th>
+        <th>zip</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let address of getData">
+
+            <td>{{address.address}}</td>
+            <td>{{address.city}}</td>
+            <td>{{address.state}}</td>
+            <td>{{address.zip}}</td>
+        </tr>
+        
+    </tbody>
+</table>

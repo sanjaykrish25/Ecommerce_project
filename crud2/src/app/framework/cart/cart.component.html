@@ -1,0 +1,60 @@
+
+<!-- <div class="" *ngFor="let cart of addCart">
+    {{cart.id}}
+</div> -->
+
+
+<div class="container">
+    <div class="card-table">
+        <div class="card-products">
+            <table>
+                <tr>
+                    <th>S.no</th>
+                    <th>Product name</th>
+                    <th>product image</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>price</th>
+                </tr>
+                <tbody>
+                    <tr *ngFor="let carts of catchCart">
+                        <td>{{carts.id}}</td>
+                        <td>{{carts.name}}</td>
+                        <td><img src="{{carts.image}}" alt="" style="width: 150px;"></td>
+                        <td>Description</td>
+                        <td>quantity</td>
+                        <td>price</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <p>{{getCategory | json}}</p>
+                 <div class="col mb-5" *ngFor="let GetCart of catchCart">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="{{GetCart.image}}" alt="">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                {{GetCart.name}}
+                                <h5 class="fw-bolder"></h5>
+                                Product price
+                                $40.00 - $80.00
+                            </div>
+            
+                        </div>                
+                    </div>    
+                </div> 
+            </div>
+        </div>           
+    </section>     -->
+
+
+
+<!-- {{servive.emptyProductsArray.products.name}} -->
